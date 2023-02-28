@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.component.css">
+  <title>{{title}}</title>
+</head>
+<body>
+  <h1>Hello</h1>
+  <p>{{score}} <span *ngIf="gameOver">Game over</span></p>
+  <div (window:keydown)="moveField($event)">
+    <table>
+      <tbody>
+        <tr *ngFor="let row of board">
+          <td *ngFor="let index of row" [ngStyle]="{'background-color':color(index)}">{{index}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
